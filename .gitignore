@@ -25,8 +25,14 @@ log.txt
 *.rusefi_binary
 *.kicad_prl
 .*-sentinel
+firmware/hw_layer/mass_storage/README*.txt
+firmware/hw_layer/mass_storage/*.url
+firmware/ramdisk.image
 
 .gradle
+
+# vim
+*~
 
 # Eclipse
 .metadata/
