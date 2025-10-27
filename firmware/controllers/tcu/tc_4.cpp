@@ -74,7 +74,7 @@ void Generic4TransmissionController::setTccState(gear_e gear) {
 }
 
 void Generic4TransmissionController::setPcState(gear_e gear) {
-	uint8_t (*pcts)[efi::size(config->tcu_pcAirmassBins)];
+	uint8_t (*pcts)[TCU_TABLE_WIDTH];
 
 	switch (gear) {
 	case REVERSE:
@@ -128,4 +128,13 @@ void Generic4TransmissionController::setPcState(gear_e gear) {
 Generic4TransmissionController* getGeneric4TransmissionController() {
 	return &generic4TransmissionController;
 }
+
+// here we have default 4R70W calibration
+void configureTcu4R70W() {
+	engineConfiguration->tcuUpshiftButtonPin = Gpio::A15;
+	engineConfiguration->tcuUpshiftButtonPinMode = PI_PULLUP;
+	engineConfiguration->tcuDownshiftButtonPin = Gpio::A15;
+	engineConfiguration->tcuDownshiftButtonPinMode = PI_PULLUP;
+}
+
 #endif // EFI_TCU
