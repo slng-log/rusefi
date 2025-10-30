@@ -38,3 +38,6 @@ void configure6ToothCrank(TriggerWaveform*);
 
 // TT_12_TOOTH_CRANK
 void configure12ToothCrank(TriggerWaveform*);
+
+// TT_DUALSYNC_8_1
+void configureDualSync81(TriggerWaveform*);

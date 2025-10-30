@@ -188,3 +188,37 @@ void configure6ToothCrank(TriggerWaveform* s) {
 	s->initialize(FOUR_STROKE_SIX_TIMES_CRANK_SENSOR, SyncEdge::RiseOnly);
   commonSymmetrical(s, 6, 0.7, 1.4);
 }
+
+void configureDualSync81(TriggerWaveform* s) {
+	s->initialize(FOUR_STROKE_CAM_SENSOR, SyncEdge::Fall);
+	s->isSynchronizationNeeded = false;
+	s->useOnlyPrimaryForSync = false;
+	s->isSecondWheelCam = true;
+	s->tdcPosition = 208; // degrees btdc of event #0 (primary wheel falling edge)
+
+	TriggerWheel twp = TriggerWheel::T_PRIMARY;
+	TriggerWheel tws = TriggerWheel::T_SECONDARY;
+
+	s->addEvent720( 44, TriggerValue::RISE, tws);
+	s->addEvent720( 90, TriggerValue::FALL, tws);
+	s->addEvent720(134, TriggerValue::RISE, tws);
+	s->addEvent720(180, TriggerValue::FALL, tws);
+
+	s->addEvent720(196, TriggerValue::RISE, twp);
+
+	s->addEvent720(224, TriggerValue::RISE, tws);
+	s->addEvent720(270, TriggerValue::FALL, tws);
+	s->addEvent720(314, TriggerValue::RISE, tws);
+	s->addEvent720(360, TriggerValue::FALL, tws);
+	s->addEvent720(404, TriggerValue::RISE, tws);
+	s->addEvent720(450, TriggerValue::FALL, tws);
+	s->addEvent720(494, TriggerValue::RISE, tws);
+	s->addEvent720(540, TriggerValue::FALL, tws);
+
+	s->addEvent720(562, TriggerValue::FALL, twp);
+
+	s->addEvent720(584, TriggerValue::RISE, tws);
+	s->addEvent720(630, TriggerValue::FALL, tws);
+	s->addEvent720(674, TriggerValue::RISE, tws);
+	s->addEvent720(720, TriggerValue::FALL, tws);
+}
