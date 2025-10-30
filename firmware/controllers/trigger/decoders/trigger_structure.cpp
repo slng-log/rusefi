@@ -833,6 +833,9 @@ void TriggerWaveform::initializeTriggerWaveform(operation_mode_e triggerOperatio
 		initializeSubaru7_6_crankOnly(this);
 		break;
 
+	case trigger_type_e::TT_DUALSYNC_8_1:
+		configureDualSync81(this);
+		break;
 
 	default:
 	  customTrigger(triggerOperationMode, this, triggerType.type);
