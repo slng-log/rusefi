@@ -1,6 +1,6 @@
 #include "global.h"
 #include "engine_types.h"
-// was generated automatically by rusEFI tool  from engine_types.h // by enum_to_string.jar tool on Tue Nov 04 14:19:21 UTC 2025
+// was generated automatically by rusEFI tool  from engine_types.h // by enum_to_string.jar tool on Mon Nov 10 17:15:10 EST 2025
 // see also gen_config_and_enums.bat
 
 
@@ -253,6 +253,8 @@ case trigger_type_e::TT_DODGE_RAM:
   return "TT_DODGE_RAM";
 case trigger_type_e::TT_DODGE_STRATUS:
   return "TT_DODGE_STRATUS";
+case trigger_type_e::TT_DUALSYNC_8_1:
+  return "TT_DUALSYNC_8_1";
 case trigger_type_e::TT_FIAT_IAW_P8:
   return "TT_FIAT_IAW_P8";
 case trigger_type_e::TT_FORD_ASPIRE:
